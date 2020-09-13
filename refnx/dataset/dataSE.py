@@ -88,17 +88,14 @@ class DataSE(object):
         if hasattr(data, "read") or type(data) is str:
             self.load(data)
             self.filename = data
-        # elif isinstance(data, DataSE):
-        #     # copy a dataset (but not it's file info)
-        #     self.name = data.name
-        #     self.filename = data.filename
-        #     self.metadata = data.metadata
-        #     self._x = data._x
-        #     self._y = data._y
-        #     self._y_err = data._y_err
-        #     self._x_err = data._x_err
-        #     self.weighted = data.weighted
-        #     self._mask = data._mask
+        elif isinstance(data, DataSE):
+            self.name = data.name
+            self.filename = data.filename
+            self.metadata = data.metadata
+            self._wav = data._wav
+            self._aoi = data._aoi
+            self._psi = data._psi
+            self._delta = data._delta
         # elif data is not None:
         #     self._x = np.array(data[0], dtype=float)
         #     self._y = np.array(data[1], dtype=float)

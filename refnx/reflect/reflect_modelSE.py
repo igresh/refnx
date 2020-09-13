@@ -43,6 +43,13 @@ class ReflectModelSE(object):
         self._structure = None
         self.structure = structure
 
+        # THIS IS REALLY QUENSTIONABLE
+        for x in self._structure:
+            try:
+                x.sld.model = self
+            except AttributeError:
+                print ("it appears you are using SLD's instead of RIs")
+
     def __call__(self, aoi, p=None):
         r"""
         Calculate the generative model

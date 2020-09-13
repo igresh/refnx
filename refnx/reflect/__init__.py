@@ -1,5 +1,6 @@
 import os
 
+from refnx.reflect.reflect_modelSE import ReflectModelSE
 from refnx.reflect.reflect_model import (
     ReflectModel,
     reflectivity,
@@ -12,12 +13,16 @@ from refnx.reflect.reflect_model import (
 from refnx.reflect.structure import (
     Structure,
     SLD,
+    RI,
     Slab,
     Component,
     sld_profile,
     Stack,
     MaterialSLD,
     MixedSlab,
+)
+from refnx.reflect.reflect_modelSE import (
+    ReflectModelSE
 )
 from refnx.reflect.interface import (
     Erf,

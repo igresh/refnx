@@ -12,7 +12,9 @@ from numpy.linalg import LinAlgError
 from scipy.optimize._numdiff import approx_derivative
 
 
-from refnx.analysis import BaseObjective
+from refnx.analysis.objective import BaseObjective
+from refnx.dataset import DataSE
+
 from refnx.analysis import (
     is_parameter,
     Parameter,
@@ -25,9 +27,6 @@ from refnx.analysis import (
 from refnx._lib import unique as f_unique
 from refnx._lib import flatten, approx_hess2
 
-import sys
-sys.path.append('E:\\Git Repos\\IGrefnx\\refnx\\dataset')
-from SEdataset import DataSE # Need to fix this - just for troubleshooting
 
 
 
@@ -88,10 +87,11 @@ class ObjectiveSE(BaseObjective):
         name=None,
     ):
         self.model = model
-        # should be a Data1D instance
+        # should be a DataSE instance
         if isinstance(data, DataSE):
             self.data = data
         else:
+            print('bad')
             self.data = DataSE(data=data)
 
         self.lnsigma = lnsigma

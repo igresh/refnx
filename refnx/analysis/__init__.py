@@ -22,7 +22,7 @@ from refnx.analysis.curvefitter import (
 )
 from refnx._lib.emcee.autocorr import integrated_time
 from refnx.analysis.model import Model, fitfunc
-
+from refnx.analysis.objectiveSE import ObjectiveSE
 
 __all__ = [s for s in dir() if not s.startswith("_")]
 

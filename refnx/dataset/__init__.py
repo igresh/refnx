@@ -1,5 +1,6 @@
 from refnx.dataset.data1d import Data1D
 from refnx.dataset.reflectdataset import ReflectDataset
+from refnx.dataset.dataSE import DataSE
 from refnx._lib._testutils import PytestTester
 
 test = PytestTester(__name__)
